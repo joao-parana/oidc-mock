@@ -9,6 +9,17 @@ const keycloakConfig = {
 
 export const keycloak = new Keycloak(keycloakConfig);
 
+// Adicione isso para tornar a instância acessível globalmente (opcional)
+
+declare global {
+	interface Window {
+		keycloak: Keycloak;
+	}
+}
+
+if (typeof window !== 'undefined') {
+	window.keycloak = keycloak;
+}
 export async function initializeKeycloak() {
 	try {
 		const authenticated = await keycloak.init({

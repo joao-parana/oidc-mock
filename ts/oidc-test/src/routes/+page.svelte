@@ -4,9 +4,13 @@
 -->
 
 <!-- src/routes/+page.svelte -->
+<script lang="ts">
+	import { keycloak } from '$lib/auth/keycloak';
+</script>
+
 <h1>Hello World</h1>
 
-{#if $keycloak.authenticated}
+{#if keycloak.authenticated}
 	<p>You are logged in!</p>
 	<a href="/protected">Go to protected page</a>
 {:else}

@@ -4,8 +4,8 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		if (!$keycloak.authenticated) {
-			login();
+		if (!keycloak.authenticated) {
+			keycloak.login();
 		}
 	});
 </script>
