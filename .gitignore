@@ -1,3 +1,2 @@
-
-docker/data/transaction-logs
-
+node_modules/
+docker/data/transaction-logs/

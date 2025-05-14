@@ -1,17 +1,6 @@
 # Red Hat Enterprise Linux Versão 9.5
 FROM quay.io/keycloak/keycloak:26.2
 
-# ATENÇÃO: a imagem keycloak:26.2 não possui microdnf, dnf e nem yum !
-# ====================================================================
-# RUN dnf -y update && \
-#     dnf -y install 'dnf-command(config-manager)' && \
-#     dnf -y clean all
-
-# RUN dnf -y update && \
-#     dnf -y upgrade && \
-#     dnf -y install curl tree vim python3 python3-pip python3-virtualenv python3-devel iputils net-tools coreutils && \
-#     dnf -y clean all
-
 ARG KEYCLOAK_REALM
 ARG KEYCLOAK_SERVER
 ARG KEYCLOAK_PORT
