@@ -1,0 +1,108 @@
+{
+  "realm": "mock",
+  "enabled": true,
+  "clients": [
+    {
+      "clientId": "fwca-client",
+      "name": "fwca",
+      "description": "",
+      "rootUrl": "",
+      "adminUrl": "",
+      "baseUrl": "",
+      "surrogateAuthRequired": false,
+      "enabled": true,
+      "alwaysDisplayInConsole": false,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "HhOZOkJ3aXaOXVMesVKGpYvdoOsyBsOF",
+      "redirectUris": ["http://localhost:8094/authorize/"],
+      "webOrigins": ["http://localhost:8094"],
+      "notBefore": 0,
+      "bearerOnly": false,
+      "consentRequired": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": false,
+      "publicClient": false,
+      "frontchannelLogout": false,
+      "protocol": "openid-connect",
+      "attributes": {
+        "realm_client": "false",
+        "oidc.ciba.grant.enabled": "false",
+        "backchannel.logout.session.required": "true",
+        "standard.token.exchange.enabled": "false",
+        "post.logout.redirect.uris": "+",
+        "oauth2.device.authorization.grant.enabled": "false",
+        "display.on.consent.screen": "false",
+        "backchannel.logout.revoke.offline.tokens": "false"
+      },
+      "authenticationFlowBindingOverrides": {},
+      "fullScopeAllowed": true,
+      "nodeReRegistrationTimeout": -1,
+      "defaultClientScopes": [
+        "web-origins",
+        "acr",
+        "profile",
+        "roles",
+        "basic",
+        "email"
+      ],
+      "optionalClientScopes": [
+        "address",
+        "phone",
+        "offline_access",
+        "organization",
+        "microprofile-jwt"
+      ],
+      "access": {
+        "view": true,
+        "configure": true,
+        "manage": true
+      }
+    }
+  ],
+  "users": [
+    {
+      "username": "admin",
+      "email": "jp@gmail.com",
+      "firstName": "João",
+      "lastName": "Paraná",
+      "enabled": true,
+      "emailVerified": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "admin321"
+        }
+      ]
+    },
+    {
+      "username": "paula",
+      "email": "ps@gmail.com",
+      "firstName": "Paula",
+      "lastName": "Silva",
+      "emailVerified": true,
+      "enabled": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "other_secret"
+        }
+      ]
+    },
+    {
+      "username": "luciano",
+      "email": "lf@gmail.com",
+      "firstName": "Luciano",
+      "lastName": "Farias",
+      "emailVerified": true,
+      "enabled": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "my_secret"
+        }
+      ]
+    }
+  ]
+}
