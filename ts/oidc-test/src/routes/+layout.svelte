@@ -27,7 +27,7 @@
 
 	function logout() {
 		keycloak.logout({
-			redirectUri: 'http://localhost:8094'
+			redirectUri: 'http://localhost:8094/authorize/'
 		});
 	}
 </script>

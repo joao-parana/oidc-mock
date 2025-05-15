@@ -3,6 +3,7 @@
 ```bash
 cd oidc-test
 git pull
+
 npm install
 npm run dev -- --open
 ```
@@ -380,11 +381,15 @@ index de45300..daf9664 100644
 
 ### segunda interação
 
+http://localhost:8180/realms/mock/protocol/openid-connect/auth?client_id=fwca-client&redirect_uri=http%3A%2F%2Flocalhost%3A8094%2F&state=d230784b-18fc-482b-95b1-e3a4b878f537&response_mode=fragment&response_type=code&scope=openid&nonce=d520bb6a-01fc-494e-8766-ade59e124c5d&prompt=none&code_challenge=eE9pD9xCCjWDppvnQUjITnvtOqiga5Rc0F316ipjDW4&code_challenge_method=S256
+
 ```diff
 
 ```
 
 ### terceira interação
+
+http://localhost:8180/realms/mock/protocol/openid-connect/auth?client_id=fwca-client&redirect_uri=http%3A%2F%2Flocalhost%3A8094%2Fauthorize%2F&state=e81301c3-a428-48e1-84d4-ce1897a9a2db&response_mode=fragment&response_type=code&scope=openid&nonce=3c5a35a6-5032-4637-a940-ddee440521c8&code_challenge=DLpUk6k2E6BzhxMW47Yq6VHNutXbB-86nxN_MrhWaac&code_challenge_method=S256
 
 ```diff
 

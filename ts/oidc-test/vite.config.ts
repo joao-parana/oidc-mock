@@ -4,6 +4,13 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
 	plugins: [sveltekit()],
+	server: {
+		port: 8094, // Porta de desenvolvimento
+		strictPort: true // Impede fallback para outra porta
+	},
+	preview: {
+		port: 8094 // Porta para npm run preview
+	},
 	test: {
 		workspace: [
 			{
