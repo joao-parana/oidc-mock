@@ -17,7 +17,8 @@ Build image and start container
 ```bash
 cd docker
 ./build-image.sh
-docker-compose up
+docker-compose up -d
+docker-compose logs -f
 # To enable DEBUG messages remove comment in 2 lines on docker/docker-compose.yml file
 # KEYCLOAK_LOGLEVEL: DEBUG
 # KC_LOG_LEVEL: DEBUG
