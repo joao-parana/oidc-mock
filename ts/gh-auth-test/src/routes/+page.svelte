@@ -11,6 +11,8 @@
 		login: string;
 		avatar_url: string;
 		// Adicione outras propriedades que um seguidor possa ter
+		// e que seja do interesse da aplicação. Não precisa definir
+		// todos (tem dezenas !), mas apenas os utilizados na aplicação
 	}
 	let followerList: Follower[] = [];
 

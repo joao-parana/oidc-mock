@@ -14,14 +14,14 @@ npx sv create
 npx sv create gh-auth-test
 
 # npm install --dev dotenv # deprecated
-npm install --include=dev
+npm install --include=dev dotenv
 npx svelte-add@latest tailwindcss
 npm install @auth/core @auth/sveltekit
 ```
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Once you've created a project and installed dependencies with `npm install`, start a development server:
 
 ```bash
 npm run dev
@@ -35,6 +35,7 @@ npm run dev -- --open
 To create a production version of your app:
 
 ```bash
+npm run check
 npm run build
 ```
 
