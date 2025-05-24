@@ -5,7 +5,14 @@
 	import { page } from '$app/stores';
 	// $page.data.session -> { user, image, etc. } AUTH session
 	console.log('$page.data.session = ' + $page.data.session);
-	let followerList: any = [];
+
+	interface Follower {
+		id: number;
+		login: string;
+		avatar_url: string;
+		// Adicione outras propriedades que um seguidor possa ter
+	}
+	let followerList: Follower[] = [];
 
 	async function getFollowerList() {
 		await fetch('https://api.github.com/user/followers', {
@@ -41,9 +48,10 @@
 			on:click={() => getFollowerList()}
 			class="rounded bg-blue-800 px-2 py-1 font-bold text-white">Get Followers List</button
 		>
-		<ul class="w-64">
+		<ul class="w-96">
 			{#each followerList as item, index (item.login)}
-				<li id={'follower' + index} class="w-64">{item.login}</li>
+				<li id={'follower_' + index} class="w-64">{item.login}</li>
+				<li id={'avatar_' + index} class="w-96">{item.avatar_url}</li>
 			{/each}
 		</ul>
 	{:else}
