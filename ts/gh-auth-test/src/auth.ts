@@ -1,6 +1,6 @@
 import { SvelteKitAuth } from '@auth/sveltekit';
 import { SAML } from '@auth/core/providers/saml';
-import { GH_CLIENT_ID, GH_CLIENT_SECRET } from '$env/static/private';
+import { KEYCLOAK_CLIENT_ID, KEYCLOAK_CLIENT_SECRET, KEYCLOAK_ISSUER } from '$env/static/private';
 
 function logObjectDetails(name: string, my_obj: unknown) {
 	console.log(`--- Details for ${name} ---`);
@@ -24,22 +24,22 @@ function logObjectDetails(name: string, my_obj: unknown) {
 export const { handle } = SvelteKitAuth({
 	providers: [
 		SAML({
-			id: 'github',
-			name: 'GitHub Enterprise',
-			clientId: GH_CLIENT_ID,
-			clientSecret: GH_CLIENT_SECRET,
-			issuer: 'https://github.com/enterprises/YOUR_ENTERPRISE_NAME/saml',
+			id: 'keycloak',
+			name: 'Keycloak',
+			clientId: KEYCLOAK_CLIENT_ID,
+			clientSecret: KEYCLOAK_CLIENT_SECRET,
+			issuer: KEYCLOAK_ISSUER,
 			authorization: {
 				params: {
-					scope: 'read:user user:email'
+					scope: 'openid profile email'
 				}
 			},
-			profile(profile) {
+			profile(profile: Record<string, any>) {
 				return {
-					id: profile.id,
-					name: profile.name,
+					id: profile.sub || profile.id,
+					name: profile.name || profile.preferred_username,
 					email: profile.email,
-					image: profile.avatar_url
+					image: profile.picture
 				};
 			}
 		})

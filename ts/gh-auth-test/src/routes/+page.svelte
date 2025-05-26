@@ -59,8 +59,8 @@
 	{:else}
 		<h1>You are not logged in</h1>
 		<button
-			on:click={() => signIn('github')}
-			class="rounded bg-blue-500 px-2 py-1 font-bold text-white">Sign in with GitHub</button
+			on:click={() => signIn('keycloak')}
+			class="rounded bg-blue-500 px-2 py-1 font-bold text-white">Sign in with Keycloak</button
 		>
 	{/if}
 </div>
