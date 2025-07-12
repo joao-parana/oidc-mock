@@ -1,0 +1,21 @@
+// File: tsconfig.json
+{
+  "compilerOptions": {
+    "target": "es2022",             /* Transpila o código para ES2022 (versão moderna do JavaScript) */
+    "module": "nodenext",           /* Usa o sistema de módulo NodeNext para compatibilidade com ESM no Node.js */
+    "moduleResolution": "NodeNext", /* Resolução de módulos compatível com Node.js */
+    "outDir": "./dist",             /* Diretório onde os arquivos JavaScript compilados serão salvos */
+    "rootDir": "./src",           /* Diretório raiz dos seus arquivos TypeScript */
+    "esModuleInterop": true,      /* Habilita interoperabilidade entre CommonJS e ES Modules */
+    "strict": true,               /* Habilita todas as opções de verificação de tipo estritas (altamente recomendado) */
+    "skipLibCheck": true,         /* Pula a verificação de tipo dos arquivos de declaração de bibliotecas (melhora a velocidade de compilação) */
+    "sourceMap": true             /* Gera arquivos .map para facilitar o debug do código TypeScript */
+  },
+  "include": [
+    "src/**/*"                    /* Inclui todos os arquivos TypeScript dentro do diretório 'src' */
+  ],
+  "exclude": [
+    "node_modules",               /* Exclui o diretório node_modules da compilação */
+    "dist"                        /* Exclui o diretório de saída compilado para evitar loops */
+  ]
+}
